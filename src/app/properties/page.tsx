@@ -1,89 +1,125 @@
+'use client';
+
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import PropertyFilters from './PropertyFilters';
-import PropertyGrid from './PropertyGrid';
+import PropertyCard from '@/components/PropertyCard';
 
-type Property = {
-  id: string;
-  title: string;
-  location: string;
-  price: string;
-  bedrooms: number;
-  bathrooms: number;
-  area: string;
-  type: string;
-  image: string;
-};
-
-const properties: Property[] = [
+// Properties data
+const properties = [
   {
-    id: '1',
-    title: 'Luxury Penthouse in London',
-    location: 'Mayfair, London',
-    price: '£2,500,000',
-    bedrooms: 3,
-    bathrooms: 3,
-    area: '2,200 sq ft',
-    type: 'Penthouse',
-    image: '/images/london-luxury.jpg'
-  },
-  {
-    id: '2',
-    title: 'Modern Apartment with City Views',
-    location: 'Kensington, London',
-    price: '£1,850,000',
+    id: "1",
+    title: "2 Bed Flat in North Birkbeck Road",
+    price: 1750,
+    location: "Leytonstone, London E11",
     bedrooms: 2,
-    bathrooms: 2,
-    area: '1,500 sq ft',
-    type: 'Apartment',
-    image: '/images/kensington-modern.jpg'
+    bathrooms: 1,
+    area: 472,
+    imageUrl: "/properties/north-birkbeck.jpg",
+    features: [
+      "First Floor Flat",
+      "Open-Plan Living Area",
+      "Near Leyton Underground",
+      "Double Glazed Windows",
+      "Gas Central Heating"
+    ]
   },
   {
-    id: '3',
-    title: 'Georgian Townhouse',
-    location: 'Bath, Somerset',
-    price: '£1,200,000',
-    bedrooms: 4,
-    bathrooms: 3,
-    area: '2,800 sq ft',
-    type: 'House',
-    image: '/images/bath-georgian.jpg'
-  },
-  {
-    id: '4',
-    title: 'Contemporary Villa',
-    location: 'Surrey',
-    price: '£3,200,000',
-    bedrooms: 5,
-    bathrooms: 4,
-    area: '3,500 sq ft',
-    type: 'Villa',
-    image: '/images/surrey-villa.jpg'
-  },
-  {
-    id: '5',
-    title: 'Riverside Apartment',
-    location: 'Thames Bank, London',
-    price: '£1,750,000',
+    id: "2",
+    title: "2 Bed Maisonette in Seymour Road",
+    price: 1700,
+    location: "London, E10",
     bedrooms: 2,
-    bathrooms: 2,
-    area: '1,400 sq ft',
-    type: 'Apartment',
-    image: '/images/riverside-apartment.jpg'
+    bathrooms: 1,
+    area: 450,
+    imageUrl: "/properties/seymour-road.jpg",
+    features: [
+      "Ground Floor Maisonette",
+      "Private Garden",
+      "Newly Refurbished",
+      "Spacious Lounge",
+      "Modern Interior"
+    ]
   },
   {
-    id: '6',
-    title: 'Country Estate',
-    location: 'Cotswolds',
-    price: '£4,500,000',
-    bedrooms: 6,
-    bathrooms: 5,
-    area: '5,000 sq ft',
-    type: 'Estate',
-    image: '/images/cotswolds-estate.jpg'
+    id: "3",
+    title: "1 Bed Flat in Tredegar Road",
+    price: 1500,
+    location: "Bow, London",
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 400,
+    imageUrl: "/properties/tredegar-road.jpg",
+    features: [
+      "Modern Development",
+      "Close to Mile End Station",
+      "Fully Furnished",
+      "Open Plan Kitchen",
+      "Available Now"
+    ]
   }
 ];
+
+// Property Filters Component
+function PropertyFilters() {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
+          <input
+            type="text"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+            placeholder="Enter location"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
+          <select className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500">
+            <option value="">All Types</option>
+            <option value="flat">Flat</option>
+            <option value="house">House</option>
+            <option value="maisonette">Maisonette</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Min Price</label>
+          <select className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500">
+            <option value="">No Min</option>
+            <option value="1000">£1,000 PCM</option>
+            <option value="1500">£1,500 PCM</option>
+            <option value="2000">£2,000 PCM</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Max Price</label>
+          <select className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500">
+            <option value="">No Max</option>
+            <option value="2000">£2,000 PCM</option>
+            <option value="2500">£2,500 PCM</option>
+            <option value="3000">£3,000 PCM</option>
+          </select>
+        </div>
+      </div>
+      <div className="mt-4 flex justify-end">
+        <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition-colors">
+          Search Properties
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// Property Grid Component
+function PropertyGrid({ properties }: { properties: any[] }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {properties.map((property) => (
+        <PropertyCard key={property.id} {...property} />
+      ))}
+    </div>
+  );
+}
 
 export default function PropertiesPage() {
   return (

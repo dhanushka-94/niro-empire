@@ -10,34 +10,55 @@ import PropertyCard from "@/components/PropertyCard";
 const featuredProperties = [
   {
     id: "1",
-    title: "Luxury Penthouse in Mayfair",
-    price: 4500000,
-    location: "Mayfair, London",
-    bedrooms: 3,
-    bathrooms: 3,
-    area: 2500,
-    imageUrl: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&auto=format&fit=crop&q=80",
+    title: "2 Bed Flat in North Birkbeck Road",
+    price: 1750,
+    location: "Leytonstone, London E11",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 472,
+    imageUrl: "/properties/north-birkbeck.jpg",
+    features: [
+      "First Floor Flat",
+      "Open-Plan Living Area",
+      "Near Leyton Underground",
+      "Double Glazed Windows",
+      "Gas Central Heating"
+    ]
   },
   {
     id: "2",
-    title: "Modern Townhouse in Kensington",
-    price: 3250000,
-    location: "Kensington, London",
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 2200,
-    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80",
+    title: "2 Bed Maisonette in Seymour Road",
+    price: 1700,
+    location: "London, E10",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 450,
+    imageUrl: "/properties/seymour-road.jpg",
+    features: [
+      "Ground Floor Maisonette",
+      "Private Garden",
+      "Newly Refurbished",
+      "Spacious Lounge",
+      "Modern Interior"
+    ]
   },
   {
     id: "3",
-    title: "Historic Georgian Manor",
-    price: 2800000,
-    location: "Bath, Somerset",
-    bedrooms: 6,
-    bathrooms: 4,
-    area: 4500,
-    imageUrl: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&auto=format&fit=crop&q=80",
-  },
+    title: "1 Bed Flat in Tredegar Road",
+    price: 1500,
+    location: "Bow, London",
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 400,
+    imageUrl: "/properties/tredegar-road.jpg",
+    features: [
+      "Modern Development",
+      "Close to Mile End Station",
+      "Fully Furnished",
+      "Open Plan Kitchen",
+      "Available Now"
+    ]
+  }
 ];
 
 export default function Home() {

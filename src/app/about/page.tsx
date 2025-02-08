@@ -77,63 +77,6 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-
-        {/* Team Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Leadership Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-32 h-32 mx-auto mb-4 relative rounded-full overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80"
-                  alt="CEO"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">John Smith</h3>
-              <p className="text-red-600 mb-2">Chief Executive Officer</p>
-              <p className="text-gray-600 text-sm">
-                20+ years of experience in luxury real estate
-              </p>
-            </div>
-
-            {/* Team Member 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-32 h-32 mx-auto mb-4 relative rounded-full overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80"
-                  alt="COO"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Sarah Johnson</h3>
-              <p className="text-red-600 mb-2">Chief Operations Officer</p>
-              <p className="text-gray-600 text-sm">
-                15+ years of operational excellence
-              </p>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-32 h-32 mx-auto mb-4 relative rounded-full overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80"
-                  alt="Sales Director"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Michael Brown</h3>
-              <p className="text-red-600 mb-2">Sales Director</p>
-              <p className="text-gray-600 text-sm">
-                12+ years of sales leadership
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <Footer />
